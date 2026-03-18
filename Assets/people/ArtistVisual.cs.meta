@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 52481c7deadc7334ea23cc5e9f623beb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - faceImage: {instanceID: 0}
+  - normal: {instanceID: 0}
+  - happy: {instanceID: 0}
+  - angry: {instanceID: 0}
+  - blink: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
