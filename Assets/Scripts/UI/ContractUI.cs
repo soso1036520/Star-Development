@@ -12,6 +12,8 @@ public class ContractUI : MonoBehaviour
     private ArtistData currentArtist;
     private CompanyData companyData;
 
+    public ArtistBlinkController blinkController;
+
     public void Init(ArtistData artist, CompanyData company)
     {
         gameObject.SetActive(true);
@@ -20,7 +22,13 @@ public class ContractUI : MonoBehaviour
         companyData = company;
 
         // ⭐ 顯示圖片（重點！！！）
-        portrait.sprite = artist.portrait;
+        portrait.sprite = artist.portrait;//
+        // ⭐ 啟動眨眼
+        if(blinkController != null)
+        {
+            Debug.Log("啟動眨眼" + artist.portrait);
+            blinkController.StartBlink(artist.characterID);
+        }
         nameText.text = artist.artistName;
 
         infoText.text =

@@ -25,19 +25,63 @@ public class GachaManager : MonoBehaviour
 
     public void DrawArtist()
     {
+        // ⭐ 檢查資料庫
+        if (PortraitDatabase.Instance == null)
+        {
+            Debug.LogError("❌ PortraitDatabase 不存在！");
+            return;
+        }
+
+        // ⭐ 檢查UI
+        if (contractUI == null)
+        {
+            Debug.LogError("❌ contractUI 沒設定！");
+            return;
+        }
+
+        // ⭐ 產生藝人
         ArtistData artist = ArtistGenerator.GenerateRandomArtist();
 
-        // ⭐ 根據性別給圖
-        if (artist.gender == Gender.Male && maleSprites.Length > 0)
+        if (artist == null)
         {
-            artist.portrait = maleSprites[Random.Range(0, maleSprites.Length)];
-        }
-        else if (artist.gender == Gender.Female && femaleSprites.Length > 0)
-        {
-            artist.portrait = femaleSprites[Random.Range(0, femaleSprites.Length)];
+            Debug.LogError("❌ Artist 生成失敗！");
+            return;
         }
 
+        // ⭐ 依性別取得角色ID
+        List<string> ids = PortraitDatabase.Instance
+            .GetCharacterIDsByGender(artist.gender);
+
+        if (ids == null || ids.Count == 0)
+        {
+            Debug.LogError($"❌ 沒有可用角色（性別：{artist.gender}）");
+            return;
+        }
+
+        // ⭐ 隨機角色
+        int index = Random.Range(0, ids.Count);
+        artist.characterID = ids[index];
+
+        // ⭐ 預設表情
+        artist.expression = "常態";
+
+        // ⭐ 取得立繪
+        Sprite portrait = PortraitDatabase.Instance
+            .GetPortrait(artist.characterID, artist.expression);
+
+        if (portrait == null)
+        {
+            Debug.LogError($"❌ 找不到立繪：{artist.characterID}_{artist.expression}");
+            return;
+        }
+
+        artist.portrait = portrait;
+
+        // ⭐ 丟給UI
         contractUI.Init(artist, companyData);
+
+        // Debug（可留）
+        Debug.Log($"✅ 抽到角色：{artist.characterID}（{artist.gender}）");
     }
     Sprite[] FilterNormalSprites(Sprite[] allSprites)
     {

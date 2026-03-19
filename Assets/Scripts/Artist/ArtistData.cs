@@ -26,6 +26,8 @@ public class ArtistData
     public int contractWeeks;
 
     public Sprite portrait;
+    public string characterID;   // 女1
+    public string expression;    // 常態 / 生氣
 }
 
 public enum Gender
