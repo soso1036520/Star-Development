@@ -19,6 +19,7 @@ public class ContractUI : MonoBehaviour
         currentArtist = artist;
         companyData = company;
 
+        // ⭐ 顯示圖片（重點！！！）
         portrait.sprite = artist.portrait;
         nameText.text = artist.artistName;
 
