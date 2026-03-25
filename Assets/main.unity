@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0183f52246d5ddf4ea8717c76a7ddbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 0}
+  portraitImage: {fileID: 680851067}
 --- !u!224 &178096495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 680851067}
   - component: {fileID: 680851068}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 1368307408}
   - component: {fileID: 1368307411}
   m_Layer: 5
-  m_Name: 'UI_Contract '
+  m_Name: "UI_Contract (\u7C3D\u7D04)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
