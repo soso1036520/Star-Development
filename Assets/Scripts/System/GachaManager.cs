@@ -8,6 +8,7 @@ public class GachaManager : MonoBehaviour
 
     private Sprite[] maleSprites;
     private Sprite[] femaleSprites;
+    public ArtistData currentArtist;
 
     void Start()
     {
@@ -76,6 +77,7 @@ public class GachaManager : MonoBehaviour
         }
 
         artist.portrait = portrait;
+        currentArtist = artist; // ⭐這行一定要有
 
         // ⭐ 丟給UI
         contractUI.Init(artist, companyData);

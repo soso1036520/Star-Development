@@ -18,6 +18,7 @@ public class PortraitDatabase : MonoBehaviour
         }
         else
         {
+            // 如果已經有了 → 刪掉重複的
             Destroy(gameObject);
             return;
         }
