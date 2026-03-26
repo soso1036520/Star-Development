@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class DialogueLine
 {
     public string speaker;
+    public string speakerName;   // ⭐ 顯示用（周然）
+    public string characterID;   // ⭐ 查立繪用（女1）
     public string content;
 
     public string expression; // "生氣" / "開心"
@@ -83,7 +85,7 @@ public class DialogueSystem : MonoBehaviour
         var line = dialogue[currentIndex];
 
         // ⭐ 名字
-        nameText.text = line.speaker;
+        nameText.text = line.speakerName;
 
         // ⭐ 取得立繪
         Sprite sprite = GetSprite(line);
@@ -109,13 +111,13 @@ public class DialogueSystem : MonoBehaviour
 
             //SetCharacterVisible(mainCharacter, true);
             SetCharacterVisible(playerCharacter, false);
-            Debug.Log("使用NPCID：" + line.speaker);
+            Debug.Log("使用NPCID：" + line.characterID);
             if(mid==0){
             PlayFade(mainCharacter);
             if(blinkController != null)
             {
-                Debug.Log("啟動眨眼" + line.speaker);
-                blinkController.StartBlink(line.speaker);
+                Debug.Log("啟動眨眼" + line.characterID);
+                blinkController.StartBlink(line.characterID);
             }
             mid=1;
             }
@@ -146,7 +148,7 @@ public class DialogueSystem : MonoBehaviour
             return PortraitManager.GetPlayerPortrait(player.playerID, line.expression);
         }else
         {
-            return PortraitManager.GetCharacterPortrait(line.speaker, line.expression);
+            return PortraitManager.GetCharacterPortrait(line.characterID, line.expression);
         }
         
     }

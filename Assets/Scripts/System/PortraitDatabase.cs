@@ -14,11 +14,9 @@ public class PortraitDatabase : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ⭐ 建議保留（跨場景）
         }
         else
         {
-            // 如果已經有了 → 刪掉重複的
             Destroy(gameObject);
             return;
         }

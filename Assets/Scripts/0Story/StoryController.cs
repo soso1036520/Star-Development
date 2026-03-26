@@ -12,7 +12,7 @@ public class StoryController : MonoBehaviour
         // ⭐ 建立藝人（只存ID）
         ArtistData artist = new ArtistData()
         {
-            artistName = "周然",
+            artistName = "羅彬",
             characterID = "1女"
         };
 
@@ -20,7 +20,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 登場
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "……你找我？",
             expression = "常態",
             isPlayer = false
@@ -28,7 +29,7 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 玩家開場
         story.Add(new DialogueLine {
-            speaker = "玩家",
+            speakerName = "玩家",
             content = "是的，我是公司新派來的經紀人，之後會負責你的所有行程安排。",
             expression = "常態",
             isPlayer = true
@@ -36,7 +37,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 冷回
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "經紀人？公司又換人了啊……動作還真快。",
             expression = "生氣",
             isPlayer = false
@@ -44,7 +46,7 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 玩家試圖解釋
         story.Add(new DialogueLine {
-            speaker = "玩家",
+            speakerName = "玩家",
             content = "我知道你可能對公司有些不滿，但我會盡量站在你的立場幫你爭取資源。",
             expression = "常態",
             isPlayer = true
@@ -52,7 +54,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 嘲諷
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "每個新來的人都這樣說。",
             expression = "生氣",
             isPlayer = false
@@ -60,7 +63,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 冷場
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "結果呢？還不是把我丟去接一些爛通告。",
             expression = "生氣",
             isPlayer = false
@@ -68,7 +72,7 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 玩家轉策略
         story.Add(new DialogueLine {
-            speaker = "玩家",
+            speakerName = "玩家",
             content = "那如果我說，我可以幫你挑掉你不想接的工作呢？",
             expression = "常態",
             isPlayer = true
@@ -76,7 +80,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 開始有反應
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "……你有這個權限？",
             expression = "常態",
             isPlayer = false
@@ -84,7 +89,7 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 玩家認真
         story.Add(new DialogueLine {
-            speaker = "玩家",
+            speakerName = "玩家",
             content = "沒有的話，我會想辦法爭取。",
             expression = "常態",
             isPlayer = true
@@ -92,7 +97,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 觀察你
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "你還真敢說。",
             expression = "常態",
             isPlayer = false
@@ -100,7 +106,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 緩和
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "……算了，至少比上一個好一點。",
             expression = "常態",
             isPlayer = false
@@ -108,7 +115,7 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 玩家
         story.Add(new DialogueLine {
-            speaker = "玩家",
+            speakerName = "玩家",
             content = "那我們可以從重新規劃你的行程開始嗎？",
             expression = "常態",
             isPlayer = true
@@ -116,7 +123,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 給機會
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "我只給你一次機會。",
             expression = "生氣",
             isPlayer = false
@@ -124,7 +132,8 @@ public class StoryController : MonoBehaviour
 
         // ⭐ 收尾
         story.Add(new DialogueLine {
-            speaker = artist.characterID,
+            speakerName = artist.artistName,   // 👉 顯示：周然
+            characterID = artist.characterID,  // 👉 查圖：女1
             content = "別讓我失望。",
             expression = "常態",
             isPlayer = false
